@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        p.valaszok {
+            padding-left: 54px;
+            padding-bottom: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <form name='teszt'>
+
+        <b>1. Milyen színt jelöl a <i> #000010</i> ? </b>
+
+        <p class='valaszok'>
+            <input type=radio name='k1'> Világoskék <br>
+            <input type=radio name='k1'> Világoszöld <br>
+            <input type=radio name='k1'> Majdnem fehér <br>
+            <input type=radio name='k1'> Majdnem fekete <br>
+        </p>
+
+
+        <b>2. Melyik <i>html-tag</i> képes sorszámozott listát megjeleníteni? </b>
+
+        <p class='valaszok'>
+            <input type=radio name='k2'>
+            <font face='courier'>&lt;hl&gt; </font><br>
+            <input type=radio name='k2'>
+            <font face='courier'>&lt;il&gt; </font><br>
+            <input type=radio name='k2'>
+            <font face='courier'>&lt;ol&gt; </font><br>
+            <input type=radio name='k2'>
+            <font face='courier'>&lt;ul&gt; </font><br>
+        </p>
+
+
+        <b>3. Melyik a többsoros szövegbekérő párbeszédelem? </b>
+
+        <p class='valaszok'>
+            <input type=radio name='k3'>
+            <font face='courier'>&lt;input type='select'&gt; </font><br>
+            <input type=radio name='k3'>
+            <font face='courier'>&lt;input type='textarea'&gt; </font><br>
+            <input type=radio name='k3'>
+            <font face='courier'>&lt;textarea&gt;&lt;/textarea&gt; </font><br>
+            <input type=radio name='k3'>
+            <font face='courier'>&lt;select&gt;&lt;/select&gt; </font><br>
+        </p>
+
+
+        <b>4. Mi a helyes CSS szintaxis egy elem szélességének megadásához? </b>
+
+        <p class='valaszok'>
+            <input type=radio name='k4'>
+            <font face='courier'>width = 250px ; </font><br>
+            <input type=radio name='k4'>
+            <font face='courier'>width : 250px ; </font><br>
+            <input type=radio name='k4'>
+            <font face='courier'>width = 250 px ; </font><br>
+            <input type=radio name='k4'>
+            <font face='courier'>width : 250 px ; </font><br>
+        </p>
+
+
+        <b>5. Melyik az a tulajdonság, aminek átírásával JS-ből frissíthető egy elem tartalma? </b>
+
+        <p class='valaszok'>
+            <input type=radio name='k5'> setInterval <br>
+            <input type=radio name='k5'> setTimeout <br>
+            <input type=radio name='k5'> innerHTML <br>
+            <input type=radio name='k5'> src <br>
+        </p>
+
+
+        <hr align=left>
+
+        <p align='center'>
+            <input type=button name='gomb' value='Értékel' onclick=' ertekel(); '>
+        </p>
+
+    </form>
+
+
+
+    <script src="script.js">
+    </script>
+
+
+    <!--Egészítsd ki a tesztet további kérdésekkel 10-ig! 
+Például:
+Hogyan lehet CSS forráskódban kommentet elhelyezni?
+/* komment */
+// komment
+// komment //
+<!-- komment -->
+    <!--Hogy hívják a szöveg betűszínét változtatni képes CSS tulajdonságot? text-color 
+    font-color
+    font color 
+    color 
+    
+    Hogyan kell JS-ben előállítani egy 1 és 90 közötti véletlen egész számot? Math.floor(Math.random()*90) 
+    Math.floor(Math.random()*90)+1 
+    Math.floor(Math.random(90))+1 
+    Math.floor(Math.random(1,90)) 
+    
+    Módosítsd úgy a kiértékelést, hogy az ne pontszámot, hanem százalékos eredményt adjon! A százalékos eredményt 2 tizedesig írja ki.-->
+
+</body>
+
+</html>

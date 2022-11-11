@@ -1,0 +1,35 @@
+A jQuery nem más, mint egy gyors és tömör JavaScript nyelvű függvénykönyvtár, ami előre megírt függvényeket tartalmaz. A hagyományos programozási nyelvektől eltérően “csak” értelmez, nem pedig végrehajt. A jQuery megpróbálja leegyszerűsíteni a bonyolultabb dolgokat a JavaScript-ből, (például az AJAX-hívások, DOM-manipulációk), így sokkal könnyebben, és gyorsabban használhatjuk azt a weboldalon.
+Tehát – js library – úgy kell érteni, hogy meg van benne írva nagyon sok dolog előre, lényegében kényelmesebbé teszi a munkánkat. jquery.com 
+Mire használjuk?
+•	DOM manipuláció – Lehetővé teszi a DOM elemeinek kiválasztását, tartalmának módosítását, manipulálását.
+•	Eseménykezelés – Lehetőségünk van kattintás, görgetés, vagy egérmozgás alapú események létrehozására.
+•	AJAX Támogatás – Az AJAX a szerverrel való adatcserét szolgálja, segítségével frissítheted a weboldal egyes részeit anélkül, hogy újra töltenéd az egész oldalt.
+•	Animációk, effektek – Számos beépített animációs hatással rendelkezik, amelyeket egyszerű függvényekkel hívhatsz meg.
+jQuery betöltése a weboldalba
+•	betöltés saját tárhelyről – A jQuery könyvtárat letöltheted a tárhelyedre, és beillesztheted a HTML kódba.
+•	betöltés külső tárhelyről – A jQuery könyvtárat közvetlenül a code.jquery.com-ról, vagy a Google-ről is betöltheted.
+Az elmélet az, hogy a jQuery gyorsabban töltődik be, ha külső tárhelyről töltjük, mert valószínűleg az már eleve tárolva van a böngészőnkben (Cache).
+Cache: Mi az a böngésző gyorsítótár és mire való? 
+A gyorsítótár azért létezik, mert az internet lassú. Pontosabban az internetkapcsolat lassabb, mint a számítógép. A fájlok merevlemezről történő lekérése mindig gyorsabb, mint a távoli kiszolgálóról történő lekérés, függetlenül attól, hogy milyen gyors a Neted. Ezért amikor a felhasználó meglátogat egy webhelyet, a böngésző az oldal egyes részeit átmásolja és eltárolja a számítógépe merevlemezén. Majd a következő látogatáskor nem a szerverről, hanem a merevlemezről tölti azt be. Ez a gyorsítótár.
+A böngészők jellemzően a webhely statikus elemeit gyorsítótárazzák, amelyek nem változnak látogatásról látogatásra.
+•	Képek, logók, hátterek
+•	Videók, hangfájlok
+•	HTML
+•	CSS
+•	JavaScript
+Az oldal HTML részének letöltése az első. Ahogy a böngésző olvassa a HTML kódot, szép sorban kéréseket küld a kiszolgálónak, hogy letöltse a fent említett statikus elemeket.  Ez a folyamat zabálja a sávszélességet, ami főleg mobilos böngészésnél gond. Ezért a gyorsítótárazás a felhasználók szempontjából hasznos dolog, mert javítja és felgyorsítja a böngészést. 
+A gyors és akadálymentes böngészés alapvető fontosságú a felhasználói élményhez, és az optimális konverziós arányokhoz.
+Nem örökre maradnak a gépeden a tárolt fájlok, gyorsítótárazott elemeknek van egy lejárati ideje. Ez böngészőtől és személyes beállításoktól függ. A böngésző általában bizonyos mennyiségű lemezterületet, fenntart erre a célra. Ha az betelik a gyorsítótár magától is kiürül.
+Ha weboldalt készítesz, akkor nagyon macerás úgy dolgozni, ha nem ürül elég gyorsan a gyorsítótár és nem látod azonnal a változásokat (feltéve, hogy helyesek a módosításaid). Ezért a gyorsítótárat rendszeresen üríteni kell.
+Gyorsítótár manuális törlése: Törölheted kézzel a gyorsítótárat a Beállítások / További eszközök / Böngésző adatok törlése gombbal.
+A függvénykönyvtárat mindkét esetben két helyre tudjuk beszúrni a HTML fájlunkban: a <head> részbe és a </body> elé. A kódot mindig a </body> elé érdemes beszúrni, hogy az a HTML kód után töltődjön le. Ha a jQuery kódot a <head> részbe rakod, akkor az az előtt fog lefutni, mielőtt létre jönne maga a HTML dokumentum, így mivel a JS kód lefutásakor a HTML fizikailag még nem létezik, módosítani/hozzáférni sem lehet.
+Ha betöltöttük a weboldalba a JS könyvtárat, akkor közvetlenül utána hívjuk be a saját JS fájlunkat, amibe írjuk a weboldalra vonatkozó módosításainkat, nevezzük mondjuk custom.js-nek.
+A $() szelektor
+A jQuery szelektorok a dollárjelzéssel és zárójelekkel kezdődnek – $(). Ezen belül háromféle mód létezik a HTML dokumentum elemeinek kiválasztására:
+Címke neve – A DOM-ban elérhető címke nevét képviseli. Például $(‘p’),  $(‘div’), $(‘li’), amellyel kiválaszthatod az összes ilyen elemet a HTML dokumentumban.
+Azonosító (id) – A megadott azonosítóval is elérhetőek a címkét. Például $(‘#lablec’), amellyel kiválaszthatod az egyedi elemet a HTML dokumentumban.
+Osztály (class) – Az adott osztályhoz tartozó címke. Például $(‘.service’) a dokumentumban szereplő összes olyan elemet választja ki, amely ilyen osztályú.
++1 Változó – A 3 közül bármelyik megadható előzőleg meghatározott változóval is. $(valtozonev)
+A fenti elemek önmagukban, vagy más szelektorokkal kombinálva is használhatók. Például: $(‘#main .service ul li’)
+Hogyan hívhatunk meg jQuery függvényeket?
+Az oldal nem manipulálható zökkenőmentesen, amíg a HTML dokumentum “nem áll készen“. Erre van is egy függvény a $( document ).ready(function() {…}); Ezen belül elhelyezett kód csak akkor fog futni, ha az oldal DOM-ja készen áll, ha már az összes HTML betöltődött.

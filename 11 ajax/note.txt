@@ -1,0 +1,23 @@
+A JSON a J ava S cript O bject N otation rövidítése. Nyelvfüggetlen, szövegalapú formátum, amelyet gyakran használnak adatátvitelre webes alkalmazásokban.
+A JSON használatának fő előnye a hatékonyság. A JSON kevésbé bőbeszédű és zsúfolt, ami kevesebb bájtot és gyorsabb elemzési folyamatot eredményez. Ez lehetővé teszi számunkra, hogy több JSON-ként küldött üzenetet dolgozzunk fel, mint XML-ként. Ezenkívül a JSON nagyon hatékony és természetes objektum-reprezentációval rendelkezik, ami olyan formátumokhoz vezet, mint a BSON , ahol a JSON-szerű objektumok bináris formátumban vannak tárolva.
+A BSON, a Binary JSON rövidítése , a JSON-szerű dokumentumok binárisan kódolt szerializálása. A JSON-hoz hasonlóan a BSON is támogatja a dokumentumok és tömbök beágyazását más dokumentumokba és tömbökbe. A BSON olyan kiterjesztéseket is tartalmaz, amelyek lehetővé teszik olyan adattípusok megjelenítését, amelyek nem részei a JSON-specifikációnak. Például a BSON Dátum típussal és BinData típussal rendelkezik.
+https://bsonspec.org/
+
+Nézzük a kódot:
+A $.getJSON király cucc, mivel nem kell sokat bíbelődni vele, a kötelező URL paraméteren kívül két opcionális paramétert is átadhatunk. Az egyik a szervernek küldendő adatokat jelöli; a másik egy visszahívást jelent a sikeres válasz esetén. 
+a urlparaméter, amely egy karakterlánc, amely tartalmazza azt az URL-t, amelyre a kérést elküldték
+az opcionális dataparaméter, amely egy objektum vagy egy karakterlánc, amely a kéréssel együtt elküldésre kerül a kiszolgálónak
+az opcionális success(data, textStatus, jqXHR)paraméter, amely egy visszahívási függvény, amely csak akkor hajtható végre, ha a kérés success
+
+A legegyszerűbb esetben csak a visszaadott objektum érdekel minket. Ebben az esetben a lehetséges successvisszahívás így néz ki:
+function success(data) {
+  //mit csináljon az objektumban lévő adatokkal
+}
+
+Ugyanez a kérés elindítható ajax hívással is:
+$.ajax({
+  dataType: 'json',
+  url: url,
+  data: data,
+  success: success
+});
